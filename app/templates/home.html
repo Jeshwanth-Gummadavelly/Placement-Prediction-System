@@ -1,12 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Placement Prediction System</title>
-</head>
-<body>
-<h1>Placement Prediction System</h1>
-<h3>Welcome to Machine Learning Project</h3>
-<p>This application predicts whether a student is likely to be placed or not</p>
-</body>
-</html>
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+    <div class="hero-content">
+        <h1>Placement Prediction System</h1>
+        <p>
+            Welcome to the Placement Prediction System. This web application uses
+            Machine Learning techniques to predict whether a student is likely to
+            be placed based on academic performance, technical skills, aptitude,
+            communication skills, and other important factors.
+        </p>
+        <a href="/dataset" class="btn">
+            Explore Project
+        </a>
+    </div>
+</section>
+<section class="features">
+    <div class="card">
+        <h2>📊 Dataset</h2>
+        <p>
+            View the student placement dataset and understand the features used
+            for prediction.
+        </p>
+    </div>
+    <div class="card">
+        <h2>📈 Data Analysis</h2>
+        <p>
+            Explore graphs, visualizations and insights obtained through
+            Exploratory Data Analysis.
+        </p>
+    </div>
+    <div class="card">
+        <h2>🤖 Machine Learning</h2>
+        <p>
+            Learn about the algorithms used for training and predicting student
+            placements.
+        </p>
+    </div>
+</section>
+{% endblock %}

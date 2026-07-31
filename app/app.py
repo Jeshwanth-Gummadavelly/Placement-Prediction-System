@@ -1,7 +1,13 @@
-from flask import Flask,render_template
+from flask import Flask, render_template
+from src.data.load_data import load_data, get_summary
 app = Flask(__name__)
-@app.route('/')
+@app.route("/")
 def home():
-    return render_template('home.html')
-if __name__ == '__main__':
+    return render_template("home.html")
+@app.route("/dataset")
+def dataset():
+    df = load_data()
+    summary = get_summary(df)
+    return render_template("dataset.html", summary=summary)
+if __name__ == "__main__":
     app.run(debug=True)

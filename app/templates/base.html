@@ -2,9 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Prediction System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-
+    <nav>
+        <div class="logo">
+            Placement Prediction
+        </div>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/dataset">Dataset</a></li>
+            <li><a href="/eda">EDA</a></li>
+            <li><a href="/preprocessing">Preprocessing</a></li>
+            <li><a href="/models">Models</a></li>
+            <li><a href="/evaluation">Evaluation</a></li>
+        </ul>
+    </nav>
+    {% block content %}
+    {% endblock %}
 </body>
 </html>
