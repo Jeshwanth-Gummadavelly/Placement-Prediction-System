@@ -1,0 +1,88 @@
+from src.data.load_data import load_data
+import matplotlib.pyplot as plt
+def basic_eda(df):
+    print("============================================================================================")
+    print("First Five rows of the DataFrame:")
+    print(df.head())
+    print("============================================================================================")
+    print("Last Five rows of the DataFrame:")
+    print(df.tail())
+    print("============================================================================================")
+    print("25 to 29 rows of the DataFrame:")
+    print(df.iloc[25:30])
+    print("============================================================================================")
+    print("Random Sample of 10 records:")
+    print(df.sample(10))
+    print("============================================================================================")
+    print("Columns in the DataFrame:")
+    print(df.columns)
+    print("============================================================================================")
+    print("Data type of the DataFrame:")
+    print(df.dtypes)
+    print("============================================================================================")
+    print("Complete Information of the DataFrame:")
+    print(df.info())
+    print("============================================================================================")
+    print("Descriptive Statistics of the DataFrame:")
+    print(df.describe())
+    print("============================================================================================")
+    print("Number of null values in the DataFrame  count :")
+    print(df.isnull().sum())
+    print("============================================================================================")
+    print("Duplicate values of the DataFrame:")
+    print(df.duplicated())
+    print("============================================================================================")
+    missing = df.isnull().sum()
+    print("Missing Values of the DataFrame:")
+    print(missing[missing>0])
+    print("============================================================================================")
+    print("Target Variable status")
+    print(df["PlacementStatus"].value_counts())
+    print("============================================================================================")
+    plt.figure(figsize=(6, 5))
+    count = df["PlacementStatus"].value_counts()
+    plt.bar(count.index, count.values,)
+    plt.savefig(r"C:\Users\gumud\PycharmProjects\PlacementPredictionSystem\app\templates\static\chats\Placement_Status.png")
+    plt.show()
+
+def univariant(df):
+    plt.figure(figsize=(6, 5))
+    plt.hist(df["CGPA"], bins=10)
+    plt.title("Histogram of CGPA")
+    plt.xlabel("CGPA")
+    plt.ylabel("Frequency")
+    plt.savefig(r"C:\Users\gumud\PycharmProjects\PlacementPredictionSystem\app\templates\static\chats\histogram.png")
+    plt.show()
+
+def gendercount(df):
+    gendercount=df["Gender"].value_counts()
+    plt.figure(figsize=(6, 5))
+    plt.pie(gendercount,labels=gendercount.index,autopct="%1.1f%%",startangle=90)
+    plt.title("Histogram of Gender")
+    plt.xlabel("Gender")
+    plt.savefig(r"C:\Users\gumud\PycharmProjects\PlacementPredictionSystem\app\templates\static\chats\genderPieChart.png")
+    plt.show()
+    print("==============================================================================================================")
+
+def bivariate(df):
+    plt.figure(figsize=(6, 5))
+    plt.scatter(df["CGPA"], df["AptitudeTestScore"])
+    plt.title("CGPA VS Aptitude Test Score")
+    plt.xlabel("CGPA")
+    plt.ylabel("Aptitude Test Score")
+    plt.savefig(r"C:\Users\gumud\PycharmProjects\PlacementPredictionSystem\app\templates\static\chats\cgpa_aptitude_test_score.png")
+    plt.show()
+    plt.close()
+    plt.figure(figsize=(6, 5))
+
+
+
+if __name__ == "__main__":
+    df=load_data()
+    basic_eda(df)
+    univariant(df)
+    gendercount(df)
+    bivariate(df)
+
+
+
