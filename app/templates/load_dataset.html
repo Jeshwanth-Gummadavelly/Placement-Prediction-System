@@ -1,1 +1,14 @@
-{%
+{% extends "base.html" %}
+{% block title %}
+Dataset
+{% endblock %}
+{% block content %}
+<div class="dataset-container">
+    <h1>First 5 Rows of Dataset</h1>
+    <div class="table-container">
+        {% for table in tables %}
+            {{ table|safe }}
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

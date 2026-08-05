@@ -3,24 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Placement Prediction System</title>
+    <title>{% block title %}Placement Prediction System{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <nav>
-        <div class="logo">
-            Placement Prediction
-        </div>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/dataset">Dataset</a></li>
-            <li><a href="/eda">EDA</a></li>
-            <li><a href="/preprocessing">Preprocessing</a></li>
-            <li><a href="/models">Models</a></li>
-            <li><a href="/evaluation">Evaluation</a></li>
-        </ul>
-    </nav>
-    {% block content %}
-    {% endblock %}
+<nav>
+    <h2 class="logo">Placement Prediction System</h2>
+    <ul class="menu">
+        <li><a href="/" class="active">Home</a></li>
+        <li><a href="#">Prediction</a></li>
+        <li><a href="/dataset">Dataset</a></li>
+        <li><a href="#">About</a></li>
+    </ul>
+</nav>
+{% block content %}
+{% endblock %}
 </body>
 </html>

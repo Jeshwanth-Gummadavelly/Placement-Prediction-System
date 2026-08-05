@@ -1,40 +1,54 @@
 {% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
 {% block content %}
+
 <section class="hero">
+
     <div class="hero-content">
+
+        <h4>MACHINE LEARNING PROJECT</h4>
+
         <h1>Placement Prediction System</h1>
+
+        <div class="line"></div>
+
         <p>
-            Welcome to the Placement Prediction System. This web application uses
-            Machine Learning techniques to predict whether a student is likely to
-            be placed based on academic performance, technical skills, aptitude,
-            communication skills, and other important factors.
+            Predict whether a student is likely to be placed using Machine Learning
+            based on academic performance, aptitude score, communication skills,
+            and technical knowledge.
         </p>
-        <a href="/dataset" class="btn">
-            Explore Project
-        </a>
+
+        <div class="stats">
+
+            <div class="card">
+                <h2>95%</h2>
+                <span>Prediction Accuracy</span>
+            </div>
+
+            <div class="card">
+                <h2>5000+</h2>
+                <span>Students Analysed</span>
+            </div>
+
+            <div class="card">
+                <h2>1200+</h2>
+                <span>Placements</span>
+            </div>
+
+        </div>
+
     </div>
+
+    <div class="hero-image">
+
+        <img src="{{ url_for('static', filename='images/graduate.png') }}" alt="Graduate">
+
+    </div>
+
 </section>
-<section class="features">
-    <div class="card">
-        <h2>📊 Dataset</h2>
-        <p>
-            View the student placement dataset and understand the features used
-            for prediction.
-        </p>
-    </div>
-    <div class="card">
-        <h2>📈 Data Analysis</h2>
-        <p>
-            Explore graphs, visualizations and insights obtained through
-            Exploratory Data Analysis.
-        </p>
-    </div>
-    <div class="card">
-        <h2>🤖 Machine Learning</h2>
-        <p>
-            Learn about the algorithms used for training and predicting student
-            placements.
-        </p>
-    </div>
-</section>
+
+<div class="wave"></div>
+
 {% endblock %}
